@@ -44,6 +44,15 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
+
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log(hit.gameObject.name);
+        if (hit.gameObject.tag == "Car")
+        {
+            SceneManager.LoadScene("game");
+        }
     }
 }
-
