@@ -35,15 +35,15 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        Debug.Log(isGorunded);
         if (Input.GetButtonDown("Jump") && isGorunded)
         {
+            Debug.Log("hop");
             velocity.y = Mathf.Sqrt(jumpHeight * -0.75f * gravity);
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime; 
 
         controller.Move(velocity * Time.deltaTime);
-
     }
 }
-
